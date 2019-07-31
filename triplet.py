@@ -12,12 +12,17 @@ def triple(list, target_sum):
     Returns:
     --------
         Returns lists with three values that sum up to zero(0). 
+
+    Big-O notation:
+    ---------------
+        O(n^3):Cubic complexity
     '''
-    for i in list:
-        for j in list:
-            if j != i:
-                for k in list:
-                    if k != i and k != j: 
-                        if int(i + j + k) == 0:
-                            print([i, j, k])
+    for i in range(0, len(list) - 2):
+        for j in range(i + 1, len(list) - 1):
+            for k in range(j + 1, len(list)):
+                if list[i] + list[j] + list[k] == target_sum:
+                    print([list[i], list[j], list[k]])
+
+
+  
 triple(list, target_sum)

@@ -3,7 +3,7 @@ target_sum = 10
 
 def sum_two(list, target_sum):
     '''
-    Returns lists with two values that sum up to 10
+    Returns a list with two values that sum up to 10
 
     Parameters:
     -----------
@@ -11,13 +11,15 @@ def sum_two(list, target_sum):
 
     Returns:
     --------
-        Returns lists with two values that sum up to 10. 
+        Returns a list with two values that sum up to 10.
+
+    Big-O notation:
+    ---------------
+        O(n):Linear complexity 
     '''
-    for i in list:
-       
-        for j in list:
-            if j != i:
-         
-                if i + j == 10:
-                    print([i, j])
+
+    for x in list:
+        if(target_sum-x) in list and (x-target_sum) in list:
+            print([x, target_sum - x])
+                    
 sum_two(list, target_sum)
