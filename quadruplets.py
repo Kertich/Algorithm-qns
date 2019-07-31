@@ -11,16 +11,18 @@ def quadruplets(list, target_sum):
 
     Returns:
     --------
-        Returns lists with four values that sum up to 16. 
+        Returns lists with four values that sum up to 16.
+
+    Big-O notation:
+        O(n^4)
     '''
-    for i in list:
-        for j in list:
-            if j != i:
-                for k in list:
-                    if k != i and k != j: 
-                        for l in list:
-                            if l != i and l != j and l != k:
-                                if int(i + j + k + l) == target_sum:
-                                    print(i, j, k, l)
+    for i in range(0, len(list) - 3):
+        for j in range(i + 1, len(list) - 2):
+            for k in range(j + 1, len(list) - 1):
+                for l in range(k + 1, len(list)):
+                    if list[i] + list[j] + list[k] + list[l] == target_sum:
+                        n = print([list[i], list[j], list[k], list[l]])
+                        return n
+   
 
 quadruplets(list, target_sum)
